@@ -31,7 +31,19 @@ class UserController extends Controller
 
     }
 
-    function updateUser(){
-        
+    function updateUser(Request $request){
+
+        $user = AppUser::find($request->id);
+
+        $user->userName=$request->userName;
+        $user->body=$request->body;
+        $result=$user->save();
+
+        if($request){
+            return ["result"=>"user details updated"];
+        }else{
+            return ["result"=>"something went wront"];
+        }
+
     }
 }

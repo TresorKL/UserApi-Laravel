@@ -24,3 +24,4 @@ Route::get("user",[UserController::class,'getUsers']);
 Route::get("user/{id}",[UserController::class,'getUser']);
 
 Route::post("add",[UserController::class,'addUser']);
+Route::put("update",[UserController::class,'updateUser']);
