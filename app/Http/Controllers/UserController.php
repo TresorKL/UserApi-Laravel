@@ -17,7 +17,6 @@ class UserController extends Controller
     }
 
     function addUser(Request $request){
-
         $appUser = new AppUser;
 
         $appUser->userName=$request->userName;
@@ -30,5 +29,9 @@ class UserController extends Controller
             return ["Result"=>"something went wrong"];  
         }
 
+    }
+
+    function updateUser(){
+        
     }
 }
