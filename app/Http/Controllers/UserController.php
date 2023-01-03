@@ -46,4 +46,15 @@ class UserController extends Controller
         }
 
     }
+
+    function searchUser($userName){
+
+      // $user = AppUser::where("userName", $userName)->get();
+       
+            $user = AppUser::where("userName","like","%". $userName."%")->get();
+            return $user;
+ 
+     
+
+    }
 }
