@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->body=$request->body;
         $result=$user->save();
 
-        if($request){
+        if($result){
             return ["result"=>"user details updated"];
         }else{
             return ["result"=>"something went wront"];
@@ -53,8 +53,17 @@ class UserController extends Controller
        
             $user = AppUser::where("userName","like","%". $userName."%")->get();
             return $user;
- 
-     
+
+    }
+
+    function delete($id){
+        $user = AppUser::find($id);
+        $result=$user->delete();
+        if($result){
+            return ["result"=>"user has been deleted"];
+        }else{
+            return ["result"=>"something went wront"];
+        }
 
     }
 }
